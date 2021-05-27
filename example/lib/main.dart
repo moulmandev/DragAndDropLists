@@ -1,12 +1,14 @@
-import 'package:example/basic_example.dart';
-import 'package:example/drag_handle_example.dart';
-import 'package:example/drag_into_list_example.dart';
-import 'package:example/expansion_tile_example.dart';
-import 'package:example/fixed_example.dart';
-import 'package:example/horizontal_example.dart';
-import 'package:example/list_tile_example.dart';
-import 'package:example/sliver_example.dart';
+
 import 'package:flutter/material.dart';
+
+import 'basic_example.dart';
+import 'drag_handle_example.dart';
+import 'drag_into_list_example.dart';
+import 'expansion_tile_example.dart';
+import 'fixed_example.dart';
+import 'horizontal_example.dart';
+import 'list_tile_example.dart';
+import 'sliver_example.dart';
 
 void main() {
   runApp(MyApp());

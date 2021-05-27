@@ -1,8 +1,10 @@
 import 'package:drag_and_drop_lists/drag_and_drop_item.dart';
 import 'package:drag_and_drop_lists/drag_and_drop_lists.dart';
-import 'package:example/navigation_drawer.dart';
+import 'navigation_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import 'navigation_drawer.dart';
 
 class BasicExample extends StatefulWidget {
   BasicExample({Key? key}) : super(key: key);
@@ -60,6 +62,10 @@ class _BasicExample extends State<BasicExample> {
       drawer: NavigationDrawer(),
       body: DragAndDropLists(
         children: _contents,
+        onItemTap: (widget) {
+          print("toto");
+          print(widget);
+        },
         onItemReorder: _onItemReorder,
         onListReorder: _onListReorder,
       ),

@@ -84,6 +84,15 @@ typedef void ItemTargetOnAccept(
   DragAndDropItemTarget target,
 );
 
+typedef void OnItemLongPress(
+    Widget widget
+);
+
+typedef void OnItemTap(
+    Widget widget
+);
+
+
 class DragAndDropLists extends StatefulWidget {
   /// The child lists to be displayed.
   /// If any of these children are [DragAndDropListExpansion] or inherit from
@@ -155,6 +164,12 @@ class DragAndDropLists extends StatefulWidget {
 
   /// Called when an item dragging is starting or ending
   final OnItemDraggingChanged? onItemDraggingChanged;
+
+  /// Called when an item is being pressed for a long time
+  final OnItemLongPress? onItemLongPress;
+
+  /// Called when an item is tapped
+  final OnItemTap? onItemTap;
 
   /// Width of a list item when it is being dragged.
   final double? itemDraggingWidth;
@@ -292,6 +307,8 @@ class DragAndDropLists extends StatefulWidget {
     this.listTargetOnWillAccept,
     this.listTargetOnAccept,
     this.onItemDraggingChanged,
+    this.onItemLongPress,
+    this.onItemTap,
     this.itemOnWillAccept,
     this.itemOnAccept,
     this.itemTargetOnWillAccept,
@@ -391,6 +408,8 @@ class DragAndDropListsState extends State<DragAndDropLists> {
       onItemDropOnLastTarget: _internalOnItemDropOnLastTarget,
       onListReordered: _internalOnListReorder,
       onItemDraggingChanged: widget.onItemDraggingChanged,
+      onItemLongPress: widget.onItemLongPress,
+      onItemTap: widget.onItemTap,
       onListDraggingChanged: widget.onListDraggingChanged,
       listOnWillAccept: widget.listOnWillAccept,
       listTargetOnWillAccept: widget.listTargetOnWillAccept,
